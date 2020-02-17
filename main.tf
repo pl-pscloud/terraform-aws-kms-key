@@ -6,6 +6,6 @@ resource "aws_kms_key" "pscloud-kms-key" {
 }
 
 resource "aws_kms_alias" "pscloud-kms-key-alias" {
-  name            = "alias/${var.pscloud_company}_kms_key_${var.pscloud_env}"
+  name            = "alias/${var.pscloud_company}_kms_key_${var.pscloud_env}_${var.pscloud_project}"
   target_key_id   = aws_kms_key.pscloud-kms-key.id
 }
